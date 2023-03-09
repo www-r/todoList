@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { editTodoHandler, deleteTodoHandler } from '@/components/Container';
 
 const TodoList = ({ id, order, title, done, createdAt, updatedAt }) => {
@@ -11,6 +12,7 @@ const TodoList = ({ id, order, title, done, createdAt, updatedAt }) => {
 						check_box_outline_blank
 					</span>
 				</div>
+
 				<div
 					className='list--item list--text'
 					contentEditable

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 // import {sendTodo } from ../api.js;
-
 const TodoInput = () => {
 	const submitHandler = e => {
 		const todoInput = e.target.closest('input').value;
@@ -13,7 +12,6 @@ const TodoInput = () => {
 					return;
 			  };
 	};
-
 	return (
 		<div className='TodoInput'>
 			<input type='text' onKeyDown={keyDownHandler} />

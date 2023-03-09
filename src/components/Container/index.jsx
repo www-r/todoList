@@ -33,7 +33,6 @@ const Container = () => {
 				<div>수정</div>
 				<div>삭제</div>
 			</div>
-
 			<div className='TodoListsWrapper'>
 				{todos.map(todo => (
 					<TodoList
