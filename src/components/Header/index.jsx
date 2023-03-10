@@ -1,13 +1,15 @@
 import React from 'react';
+import '@/styles/Header.scss';
 import { TodoInput } from '../index';
 
-const Header = () => {
+const Header = ({ todos, setTodos }) => {
+	console.log(todos);
 	return (
 		<div className='Header'>
 			<div className='Title'>
-				<span>할 일 목록</span>
+				<h1>할 일 목록</h1>
 			</div>
-			<TodoInput />
+			<TodoInput todos={todos} setTodos={setTodos} />
 		</div>
 	);
 };

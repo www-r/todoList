@@ -33,6 +33,7 @@ export async function addTodo(newTodo) {
 
 //삭제 api
 export async function deleteTodo(todoid) {
+	console.log(todoid);
 	const res = await fetch(
 		`https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoid}`,
 		{

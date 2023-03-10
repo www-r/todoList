@@ -1,29 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from '@/components/TodoList';
-import { editTodo, deleteTodo, getTodos } from '@/components/api.js';
+import { getTodos } from '@/components/api.js';
+import '@/styles/Container.scss';
 
-export const editTodoHandler = event => {
-	console.log(event.target);
-};
-export const deleteTodoHandler = e => {
-	deleteTodo(e.target.closest('li').id);
-	// renderTodo();
-};
-
-const Container = () => {
-	const [todos, setTodos] = useState([]);
-
-	const getTodo = async () => {
-		const newtodos = await getTodos();
-		setTodos(newtodos);
-	};
-	// 처음 로딩됐을 떄
-	useEffect(() => {
-		getTodo();
-	}, []);
-
-	console.log('e', todos);
-
+const Container = ({ todos, setTodos }) => {
 	return (
 		<div className='Container'>
 			<div className='Category'>
@@ -42,7 +22,9 @@ const Container = () => {
 						title={todo.title}
 						done={todo.done}
 						createdAt={todo.createdAt}
-						updatedAt={todo.upDatedAt}
+						updatedAt={todo.updatedAt}
+						todos={todos}
+						setTodos={setTodos}
 					/>
 				))}
 			</div>
