@@ -1,4 +1,5 @@
-import SF_HambakSnowTTF from '@/assets/fonts/SF_HambakSnowTTF';
+// import SFHambakSnowTTF from '@/assets/fonts/SFHambakSnowTTF.ttf';
+// import KyoboHandWriting2021syj from '@/assets/fonts/KyoboHandWriting2021syj.otf';
 
 const palette = {
 	lightblue: '#8dcdd3',
@@ -10,23 +11,18 @@ const fontSizes = {
 	small: '17px',
 	tiny: '15px'
 };
-const fontFamily = {
-	HambakSnow: `@font-face {
-    font-family: "HambakSnowTTF";
-    src: url(${SF_HambakSnowTTF}) format('truetype')
-  }`
-};
-
 const button = {
 	outline: 'none',
 	border: '5px solid',
-	borderRadius: '20px',
-	backgroundColor: '#fff'
+	borderRadius: '20px'
 };
+// const fontFamily = {
+// 	handwriting: 'KyoboHandWriting2021syj',
+// 	classic: 'SFHambakSnowTTF'
+// };
 const theme = {
 	palette,
 	fontSizes,
-	fontFamily,
 	button
 };
 
