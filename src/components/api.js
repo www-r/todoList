@@ -1,5 +1,5 @@
 const URL = 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos';
-const HEADERS = {
+const headers = {
 	'content-type': 'application/json',
 	'apikey': 'FcKdtJs202301',
 	'username': 'KDT4_KimYoungEn'
@@ -9,7 +9,7 @@ const HEADERS = {
 export async function getTodos() {
 	const res = await fetch(URL, {
 		'method': 'GET',
-		'headers': HEADERS
+		headers
 	});
 	const json = await res.json();
 	return json;
@@ -21,7 +21,7 @@ export async function addTodo(newTodo) {
 		'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
 		{
 			'method': 'POST',
-			'headers': HEADERS,
+			headers,
 			'body': JSON.stringify({
 				title: `${newTodo}`
 			})
@@ -33,12 +33,11 @@ export async function addTodo(newTodo) {
 
 //삭제 api
 export async function deleteTodo(todoid) {
-	console.log(todoid);
 	const res = await fetch(
 		`https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoid}`,
 		{
 			method: 'DELETE',
-			headers: HEADERS
+			headers
 		}
 	);
 	const json = await res.json();
@@ -46,13 +45,14 @@ export async function deleteTodo(todoid) {
 }
 
 //수정 api
-export async function editTodo(todoid, todotitle, tododone) {
+export async function editTodo(id, title, done) {
+	console.log(title);
 	const res = await fetch(
-		`https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoid}`,
+		`https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${id}`,
 		{
 			method: 'PUT',
-			headers: HEADERS,
-			body: JSON.stringify({ 'title': `${todotitle}`, 'done': `${tododone}` })
+			headers,
+			body: JSON.stringify({ title, 'done': done })
 		}
 	);
 }
