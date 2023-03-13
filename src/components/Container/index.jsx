@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from '@/components/TodoList';
-import { getTodos } from '@/components/api.js';
-import '@/styles/Container.scss';
+import * as S from './style.js';
 
 const Container = ({ todos, setTodos }) => {
 	return (
-		<div className='Container'>
-			<div className='Category'>
-				<div>완료</div>
-				<div>오늘 해야할 일</div>
-				<div>날짜</div>
-				<div>수정</div>
-				<div>삭제</div>
-			</div>
+		<S.Container className='Container'>
+			<ul className='Category'>
+				<li>완료</li>
+				<li>오늘 해야할 일</li>
+				<li>날짜</li>
+				<li>수정</li>
+				<li>삭제</li>
+			</ul>
 			<div className='TodoListsWrapper'>
 				{todos.map(todo => (
 					<TodoList
@@ -21,6 +20,7 @@ const Container = ({ todos, setTodos }) => {
 						order={todo.order}
 						title={todo.title}
 						done={todo.done}
+						// setDone={setDone}
 						createdAt={todo.createdAt}
 						updatedAt={todo.updatedAt}
 						todos={todos}
@@ -28,7 +28,7 @@ const Container = ({ todos, setTodos }) => {
 					/>
 				))}
 			</div>
-		</div>
+		</S.Container>
 	);
 };
 
